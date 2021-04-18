@@ -1,0 +1,143 @@
+.infograph__container {
+ padding: 0 15px;
+ margin-bottom: 150px;
+ margin-right: auto;
+ margin-left: auto;
+}
+.infograph__list {
+ @include reset-list;
+ @include d-flex(row, center, space-between);
+ background-color: #fff;
+ padding: 42px 91px;
+ border-radius: 10px;
+ box-shadow: -0px 40px 50px #ebebeb;
+}
+
+.infograph__item {
+ @include d-flex (row, center, start);
+ &::before {
+  display: inline-block;
+  width: 55px;
+  height: 55px;
+  margin-right: 36px;
+  margin-left: 20px;
+  border-radius: 50%;
+  background-color: rgba($main-color, 0.1);
+  content: "";
+ }
+ &::after {
+  display: inline-block;
+  content: "";
+  width: 2px;
+  height: 125px;
+  margin-left: 130px;
+  border-radius: 2px;
+  background-color: #eeeef3;
+ }
+ &:last-child::after {
+  display: none;
+ }
+}
+
+.users::before {
+ @include pseudo-bg(url(../../img/user.svg), 24px)
+}
+
+.location::before {
+ @include pseudo-bg(url(../../img/location.svg), 24px)
+}
+
+.server::before {
+ @include pseudo-bg(url(../../img/server.svg), 24px)
+}
+
+.infograph__heading {
+ margin: 0;
+ padding: 0;
+ font-size: 25px;
+ line-height: 30px;
+ color: $text-color;
+ margin-bottom: 5px;
+}
+
+.infograph__description {
+ margin: 0;
+ padding: 0;
+ font-weight: normal;
+ font-size: 20px;
+ line-height: 30px;
+ color: $text-secondary-color;
+}
+
+@include breakpoint-down(1020px){
+ .infograph__container {
+  margin-top: 30px;
+ }
+ .infograph__item::after {
+  margin: 0 30px;
+ }
+}
+
+@include breakpoint-down(870px){
+ .infograph__container {
+  margin-bottom: 40px;
+ }
+ .infograph__list {
+  padding: 30px;
+ }
+ .infograph__item {
+  &::before{
+   width: 44px;
+   height: 44px;
+   margin: 20px;
+  }
+  &::after {
+   height: 80px;
+   margin: 0 25px;
+  }
+ }
+ .infograph__heading {
+  font-size: 20px;
+  line-height: 22px;
+ }
+ .infograph__description {
+  font-size: 14px;
+  line-height: 18px;
+ }
+}
+
+@include breakpoint-down(570px){
+ .infograph__container {
+  margin-top: 0;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 375px;
+ }
+ .infograph__list {
+  max-width: 300px;
+  width: 450px;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 20px;
+ }
+ .infograph__item::before {
+  margin: 15px;
+ }
+ .infograph__item::after {
+  display: none;
+  margin: 0;
+ }
+ .infograph__item {
+  margin-right: auto;
+  margin-left: 20%;
+  
+ }
+ .infograph__heading {
+  font-size: 18px;
+  line-height: 20px;
+  margin-bottom: 5px;
+ }
+}

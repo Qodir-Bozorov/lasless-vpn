@@ -1,0 +1,153 @@
+.site-footer {
+ background-color: #f8f8f8;
+}
+.site-footer__container {
+ position: relative;
+ padding-top: 180px;
+ padding-bottom: 100px;
+ display: flex;
+ align-items: stretch;
+}
+//////Notification
+.notification {
+ padding: 58px 70px;
+ border-radius: 10px;
+ background-color: #fff;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ flex-wrap: wrap;
+ box-shadow: 0px 30px 30px -30px #00000045;
+ position: absolute;
+ top: -136px;
+ left: 0;
+ width: 100%;
+}
+.notification__heading {
+ margin-bottom: 20px;
+}
+.notification__text-wrapper {
+ max-width: 371px;
+}
+
+.footer__description {
+ margin-bottom: 30px;
+}
+
+.site-footer__socials {
+ max-width: 315px;
+}
+
+.site-footer__logo-link {
+ margin-bottom: 20px;
+ display: flex;
+}
+
+.social__links {
+ display: flex;
+ @include reset-list;
+ margin-bottom: 30px;
+}
+
+.social__links-item {
+ display: flex;
+ box-shadow: $bottom-shadow;
+ border-radius: 50%;
+ margin-right: 20px;
+}
+
+.social-link {
+ display: inline-block;
+ width: 34px;
+ height: 34px;
+ border-radius: 50%;
+ background-color: $main-color;
+ background-repeat: no-repeat;
+ background-position: center center;
+ background-size: 37px 37px;
+}
+
+.facebook {
+ background-image: url(../../img/Facebook.svg);
+}
+.twitter {
+ background-image: url(../../img/Twitter.svg);
+}
+
+.instagram {
+ background-image: url(../../img/Instagram.svg);
+}
+
+.social-links__twitter {
+ background-image: url();
+}
+
+.footer__nav {
+ flex-grow: 1;
+}
+
+.footer-nav__mapper {
+ @include reset-list;
+ max-width: 570px;
+ flex-grow: 1;
+ margin-left: auto;
+ display: flex;
+ justify-content: space-between;
+}
+
+.footer__nav-item,
+.footer-nav__list {
+ @include reset-list;
+}
+.footer-nav__list {
+ margin: 0 20px;
+}
+
+.nav-list__item {
+ margin: 10px 0;
+}
+
+.nav-list__heading {
+ font-weight: 500;
+ font-size: 18px;
+ line-height: 30px;
+}
+
+.nav-list__item-link {
+ font-weight: normal;
+ font-size: 16px;
+ line-height: 30px;
+ text-decoration: none;
+ color: $text-secondary-color;
+ transition: $main-smoothing;
+ &:hover {
+  color: $text-color;
+ }
+}
+
+@include breakpoint-down(780px) {
+ .notification {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+ }
+ .notification__subscribe__link {
+  margin-top: 20px;
+ }
+ .site-footer__container {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+ }
+ .social__links {
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+  margin-left: auto;
+  width: auto;
+ }
+ // .footer-nav__mapper {
+ //  flex-direction: column;
+
+ // } 
+}

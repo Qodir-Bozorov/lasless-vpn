@@ -1,0 +1,112 @@
+.monthly-plans__container {
+ margin-right: auto;
+ margin-left: auto;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+}
+.monthly-plans__text-wrapper {
+ text-align: center;
+ padding: 0 20px;
+ margin-bottom: 35px;
+}
+
+.monthly-plans__plans-list {
+ @include reset-list;
+ display: flex;
+ align-items: stretch;
+ justify-content: center;
+ flex-wrap: wrap;
+}
+.monthly-plans__plans-item {
+ padding: 50px 69px;
+ max-width: 330px;
+ margin: 25px;
+ flex-shrink: 0;
+ flex-grow: 1;
+ border: 2px solid #dddddd;
+ border-radius: 10px;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ &::before {
+  display: inline-block;
+  content: "";
+  width: 145px;
+  height: 165px;
+  background-image: url(../../img/box-present.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+ }
+}
+
+.monthly-plans-list__heading {
+ font-weight: 500;
+ font-size: 18px;
+ line-height: 30px;
+ text-align: center;
+ color: $text-color;
+ margin: 30px 0;
+}
+
+.monthly-plans__privilege-list {
+ @include reset-list;
+ max-width: 190px;
+ font-size: 14px;
+ line-height: 30px;
+ color: $text-secondary-color;
+}
+.monthly-plans__privilege-item {
+ display: flex;
+ align-items: center;
+ margin: 0;
+ margin-bottom: 10px;
+ &::before {
+  display: inline-block;
+  content: "";
+  width: 14px;
+  height: 14px;
+  margin-right: 25px;
+  @include pseudo-bg(url(../../img/checked.svg), contain) background-repeat: no-repeat;
+  background-position: center center;
+ }
+}
+
+.monthly-plans-item__buy-part {
+ margin-top: auto;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+}
+
+.buy-part__plan-type {
+ font-weight: 500;
+ font-size: 25px;
+ line-height: 30px;
+ margin: 20px 0;
+}
+
+.time {
+ font-weight: normal;
+ font-size: 25px;
+ font-style: normal;
+ color: $text-secondary-color;
+}
+
+.monthly-plans-item__buy-link {
+ color: $main-color;
+ text-decoration: none;
+ padding: 13px 63px;
+ border: 2px solid $main-color;
+ border-radius: 50px;
+ font-weight: bold;
+ font-size: 16px;
+ line-height: 19px;
+ transition: color 440ms ease, background-color 440ms ease;
+ &:hover {
+  background-color: $main-color;
+  color: #fff;
+  box-shadow: $bottom-shadow;
+ }
+}

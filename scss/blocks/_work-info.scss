@@ -1,0 +1,114 @@
+.work-info__container {
+ margin-bottom: 130px;
+}
+.work-info__content-wrapper {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ &::before {
+  display: inline-block;
+  content: "";
+  width: 508px;
+  height: 414px;
+  flex-shrink: 0;
+  margin-left: 35px;
+  margin-right: 35px;
+  background-image: url(../../img/guy-in-happy.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+ }
+}
+.work-info__text-wrapper {
+ max-width: 425px;
+}
+.work-info__heading {
+ padding: 0;
+ margin: 0;
+ margin-bottom: 20px;
+}
+.work-info__description {
+ padding: 0;
+ margin: 0;
+ margin-bottom: 12.5px;
+}
+.work-info__steps-list {
+ @include reset-list;
+}
+.work-info__steps-item {
+ padding: 7.5px 0;
+ display: flex;
+ align-items: center;
+ &::before {
+  display: inline-block;
+  content: "";
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background-color: #2FAB73;
+  margin-right: 10px;
+  @include pseudo-bg (url(../../img/checked-mark.svg), 11px 11px);
+  background-position: center center;
+  background-repeat: no-repeat;
+  // vertical-align: middle;
+ }
+}
+
+@include breakpoint-down (950px) {
+ .work-info__container {
+  margin-bottom: 100px;
+ }
+ .work-info__content-wrapper::before {
+  width: 408px;
+  height: 314px;
+ }
+ .work-info__heading {
+  margin-bottom: 15px;
+ }
+}
+
+@include breakpoint-down (750px) {
+ .work-info__container {
+  margin-bottom: 80px;
+ }
+ .work-info__content-wrapper::before {
+  width: 308px;
+  height: 214px;
+ }
+ .section__description {
+  line-height: 20px;
+ }
+}
+@include breakpoint-down (650px) {
+ .work-info__container {
+  margin-bottom: 60px;
+ }
+ .work-info__content-wrapper {
+  flex-direction: column;
+  text-align: center;
+ }
+ .work-info__content-wrapper::before {
+  height: 300px;
+  width: 100%;
+  background-size: contain;
+  margin-bottom: 30px;
+ }
+ .work-info__text-wrapper {
+  padding: 10px;
+ }
+ .work-info__steps-list {
+  white-space: nowrap;
+  margin-left: 50%;
+  text-align-last: left;
+  transform: translateX(-70%);
+ }
+ .work-info__steps-item {
+  padding: 5px 0;
+  &::before {
+   width: 20px;
+   height: 20px;
+   background-size: 9px 9px;
+  }
+ }
+}

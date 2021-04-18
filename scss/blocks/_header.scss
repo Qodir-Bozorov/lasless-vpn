@@ -1,0 +1,125 @@
+.site-header {
+ padding: 50px 0;
+}
+
+.sitenav {
+ @include d-flex(row, center, space-between);
+ position: relative;
+}
+
+.sitenav__logo-link {
+ flex-shrink: 0;
+}
+
+.sitenav__logo-img {
+ display: block;
+}
+
+.sitenav__list {
+ @include reset-list;
+ @include d-flex(row, center, start);
+}
+.sitenav__item {
+ margin: 0 20px;
+}
+
+.sitenav__item--link {
+ @include restyle-link($text-secondary-color, none, $text-color, none) transition: $main-smoothing;
+ font-size: 16px;
+ line-height: 19px;
+ padding-bottom: 5px;
+ transition: all $delay;
+ &:hover {
+  box-shadow: 0 1px 0 0 $main-color;
+ }
+}
+
+.sitenav__toggler {
+ outline: none;
+ display: none;
+ border: none;
+ color: $text-secondary-color;
+ background: none;
+ width: 25px;
+ height: 20px;
+ @include pseudo-bg (url(../../img/menu.svg), cover);
+ &:hover {
+  color: $main-color;
+ }
+ &:focus {
+  box-shadow: $bottom-shadow;
+ }
+}
+
+.sitenav__login-options {
+ @include d-flex(row, center, start);
+ flex-shrink: 0;
+}
+
+.sitenav__sign-in {
+ @include restyle-link($text-color, none, $text-color, underline);
+ margin-right: 30px;
+ font-weight: 500;
+ font-size: 16px;
+ line-height: 19px;
+}
+
+.sitenav__sign-up {
+ @include button-outline;
+}
+
+@include breakpoint-down(940px) {
+ .sitenav__login-options {
+  display: none;
+ }
+}
+
+@include breakpoint-down(700px) {
+ .sitenav__logo-img {
+  width: 120px;
+  height: auto;
+ }
+ .sitenav__item--link {
+  font-size: 14px;
+  line-height: 16px;
+ }
+}
+
+@include breakpoint-down(600px) {
+ .sitenav__toggler {
+  display: block;
+ }
+ .sitenav__list {
+  position: absolute;
+  opacity: 0;
+  z-index: -999;
+  transform: scaleY(0) translateY(-100%);
+  //hider
+  right: 0;
+  top: 100%;
+  background-color: #fff;
+  box-shadow: $left-shadow;
+  flex-direction: column;
+  align-items: start;
+  border-radius: 5px;
+  padding: 10px;
+  transition: $action-smoothing;
+  &--open{
+   transition: $action-smoothing;
+   transform: scaleY(1) translateY(0);
+   opacity: 1;
+   height: auto;
+   width: auto;
+   z-index: 0;
+  }
+ }
+ .sitenav__item {
+  padding: 5px;
+  width: 100%;
+  &--link {
+   width: 100%;
+   padding: 5px;
+
+  }
+ }
+}

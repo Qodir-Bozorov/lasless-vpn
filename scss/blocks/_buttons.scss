@@ -1,0 +1,41 @@
+@mixin button-outline {
+ @include restyle-link($main-color, none, rgba($main-color, 0.7), none);
+ font-weight: 500;
+ font-size: 16px;
+ line-height: 19px;
+ padding: 13px 45px;
+ border: 1px solid $main-color;
+ border-radius: $button-radius;
+ transition: $main-smoothing;
+ &:hover {
+  background-color: $main-color;
+  color: #fff;
+  box-shadow: $bottom-shadow;
+ }
+}
+
+@mixin primary-button {
+ border: none;
+ background: none;
+ outline: none;
+ text-decoration: none;
+ font-weight: bold;
+ font-size: 16px;
+ line-height: 25px;
+ color: #fff;
+ background-color: $main-color;
+ border: 1px solid $main-color;
+ padding: 17px 77px;
+ transition: $main-smoothing;
+ border-radius: 10px;
+ box-shadow: $bottom-shadow;
+ cursor: pointer;
+ &:hover {
+  box-shadow: none;
+  opacity: 0.9;
+ }
+ &:active {
+  opacity: 1;
+  box-shadow: inset 0 0 4px #222;
+ }
+}

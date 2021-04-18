@@ -1,0 +1,77 @@
+.hero {
+ // background-image: url(../../img/guy-with-laptop.png);
+ @include pseudo-bg(url(../../img/guy-with-laptop.png), 611px 382px);
+ background-position: calc(50% + 360px) center;
+ padding-bottom: 100px;
+}
+.hero__text-wrapper {
+ padding-top: 70px;
+}
+.hero__heading {
+ margin: 0;
+ padding: 0;
+ margin-bottom: 20px;
+ font-weight: 500;
+ font-size: 50px;
+ line-height: 70px;
+ color: $text-color;
+}
+
+.hero__description {
+ padding: 0;
+ margin: 0;
+ margin-bottom: 50px;
+}
+
+.primary-button {
+ @include primary-button;
+}
+
+@include breakpoint-down (1050px) {
+ .hero {
+  background-size: contain;
+  background-position: calc(50% + 200px);
+ }
+ .hero__text-wrapper {
+  max-width: 444px;
+ }
+ .hero__heading {
+  font-size: 40px;
+  line-height: 50px;
+ }
+
+ .hero__button {
+  padding: 10px 40px;
+  border-radius: 8px;
+ }
+}
+
+@include breakpoint-down (760px) {
+ .hero {
+  background-position: top center;
+  background-size: 407px 255px;
+  padding-top: 240px;
+  padding-bottom: 80px;
+ }
+ .hero__text-wrapper {
+  max-width: 440px;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  @include d-flex(column, center, center);
+ }
+ .hero__heading {
+  font-size: 30px;
+  line-height: 35px;
+  margin: 10px;
+ }
+ .hero__description {
+  max-width: 500px;
+  margin-bottom: 15px;
+ }
+ .hero__button {
+  font-size: 14px;
+  list-style: 15px;
+  padding: 10px 30px;
+ }
+}

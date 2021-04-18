@@ -1,0 +1,25 @@
+.section__description {
+ margin: 0;
+ font-size: 14px;
+ line-height: 25px;
+ color: $text-secondary-color;
+}
+.section__heading {
+ margin: 0;
+ font-weight: 500;
+ font-size: 35px;
+ line-height: 50px;
+ color: $text-color;
+}
+
+.section__text-wrapper {
+ max-width: 555px;
+}
+
+@include breakpoint-down(950px) {
+ .section__heading {
+  font-size: 28px;
+  line-height: 35px;
+  margin-bottom: 15px;
+ }
+}
